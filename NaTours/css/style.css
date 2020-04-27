@@ -24,6 +24,7 @@ body {
 }
 
 .header{
+    position: relative;
     height: 95vh;
     background-image: linear-gradient(
         to right bottom,
@@ -34,4 +35,14 @@ body {
     background-size: cover; /* property specifies the size of the background images*/
     background-position: top;
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* clip-path property in CSS allows you to specify a specific region of an element to display*/
+}
+
+.logo-box {
+    position: absolute; 
+    top: 40px; /* top and left positions will be relative to its parent element which has position relative (header)*/
+    left: 40px;
+}
+
+.logo {
+    height: 35px;
 }
