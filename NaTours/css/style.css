@@ -19,6 +19,8 @@ body {
     font-weight: 400;
     color: #777;
     line-height: 1.7;
+    padding: 30px; /* paddings are not inherited */
+    border: 1px solid black;
 }
 
 .header{
@@ -30,4 +32,6 @@ body {
     ), 
     url(../img/hero.jpg); /*   background-image with linear-gradient;*/
     background-size: cover; /* property specifies the size of the background images*/
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* clip-path property in CSS allows you to specify a specific region of an element to display*/
 }
