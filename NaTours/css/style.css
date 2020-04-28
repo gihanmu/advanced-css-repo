@@ -122,6 +122,24 @@ Defining animations
     }
 }
 
+/* going from right to left */
+@keyframes moveInBottom {
+    0% {
+        /* start of the animation */
+        opacity: 0; /*element is initially invisible */
+        transform: translateY(100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/**
+Defining animations 
+**/
+
 .btn:link, btn:visited {
     text-decoration: none;
     text-transform: uppercase;
@@ -129,7 +147,7 @@ Defining animations
     display: inline-block;
     border-radius: 100px;
     transition: all .2s ;
-
+    position: relative;
 }
 
 .btn:hover {
@@ -147,3 +165,30 @@ Defining animations
     color: #777;
 }
 
+
+.btn::after {
+    content: ''; /*content and display MUST be there for after to work*/
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    position: absolute; /* absolute is relative to parent element ok*/
+    border-radius: 100px;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #fff;
+}
+
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6); /*increase the size of the element*/
+    opacity: 0;
+}
+
+.btn-animated {
+    animation: moveInBottom 1s ease-out .75s;
+    animation-fill-mode: backwards; /*applies (backwards) (first keyframeg)0%  of the defined animation before the animation starts*/
+}
