@@ -47,16 +47,19 @@ body {
     height: 35px;
 }
 
+
 .text-box{
     position: absolute;
     top: 40%; /* top and left are in relation to parent element */
     left: 50%;
     transform: translate(-50%, -50%); /*This will shifted height and width of element (This is not related to parent element, but the element itself)*/
+    text-align: center;
 }
 
 .heading-primary{
     color: #fff;
     text-transform: uppercase;
+    margin-bottom: 60px;
 }
 
 .heading-primary-main {
@@ -117,5 +120,30 @@ Defining animations
         opacity: 1;
         transform: translate(0);
     }
+}
+
+.btn:link, btn:visited {
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 15px 40px;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all .2s ;
+
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0,0,0, 0.2);
+}
+
+.btn-white {
+    background-color: #fff;
+    color: #777;
 }
 
