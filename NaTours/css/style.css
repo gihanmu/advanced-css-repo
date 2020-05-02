@@ -7,20 +7,24 @@ Dark green: #28b485
 
 */
 
-* {
+*, *::after, *::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box; /* box sizing will make sure element size include borders and padding*/
 }
 
+html {
+    /* Setting root font-size and use rem values in other elements*/
+    /*we dont specify root font-size in PX. Usually browser default font-size is 16px. Make a percentage of that*/
+    font-size: 62.5%; /*we want font-size to be 10px. So 62.5% of default font-size (16px)*/
+}
+
 body {
     font-family: 'Lato' , sans-serif;
-    font-size: 16px;
     font-weight: 400;
     color: #777;
     line-height: 1.7;
-    padding: 30px; /* paddings are not inherited */
-    border: 1px solid black;
+    padding: 3rem; /* paddings are not inherited */
 }
 
 .header{
@@ -39,12 +43,12 @@ body {
 
 .logo-box {
     position: absolute; 
-    top: 40px; /* top and left positions will be relative to its parent element which has position relative (header)*/
-    left: 40px;
+    top: 4rem; /* top and left positions will be relative to its parent element which has position relative (header)*/
+    left: 4rem;
 }
 
 .logo {
-    height: 35px;
+    height: 3.5rem;
 }
 
 
@@ -59,14 +63,14 @@ body {
 .heading-primary{
     color: #fff;
     text-transform: uppercase;
-    margin-bottom: 60px;
+    margin-bottom: 6rem;
 }
 
 .heading-primary-main {
     display: block;
-    font-size: 60px;
+    font-size: 6rem;
     font-weight: 400;
-    letter-spacing: 35px;
+    letter-spacing: 3.5rem;
 
     /** specifying animations**/
     animation-name: moveInLeft;
@@ -76,9 +80,9 @@ body {
 
 .heading-primary-sub {
     display: block;
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 700;
-    letter-spacing: 17.4px;
+    letter-spacing: 1.75rem;
     animation: moveInRight 1s ease-out;
 }
 
@@ -91,11 +95,11 @@ Defining animations
     0% {
         /* start of the animation */
         opacity: 0; /*element is initially invisible */
-        transform: translate(-100px);
+        transform: translate(-10rem);
     }
 
     80% {
-        transform: translate(20px);
+        transform: translate(2rem);
     }
 
     100% {
@@ -109,11 +113,11 @@ Defining animations
     0% {
         /* start of the animation */
         opacity: 0; /*element is initially invisible */
-        transform: translate(100px);
+        transform: translate(10rem);
     }
 
     80% {
-        transform: translate(-20px);
+        transform: translate(-2rem);
     }
 
     100% {
@@ -127,7 +131,7 @@ Defining animations
     0% {
         /* start of the animation */
         opacity: 0; /*element is initially invisible */
-        transform: translateY(100px);
+        transform: translateY(10rem);
     }
 
     100% {
@@ -143,20 +147,20 @@ Defining animations
 .btn:link, btn:visited {
     text-decoration: none;
     text-transform: uppercase;
-    padding: 15px 40px;
+    padding: 1.5rem 4rem;
     display: inline-block;
-    border-radius: 100px;
+    border-radius: 10rem;
     transition: all .2s ;
     position: relative;
 }
 
 .btn:hover {
-    transform: translateY(-3px);
+    transform: translateY(-.3rem);
     box-shadow: 0 10px 20px rgba(0,0,0, 0.2);
 }
 
 .btn:active {
-    transform: translateY(-1px);
+    transform: translateY(-.1rem);
     box-shadow: 0 5px 10px rgba(0,0,0, 0.2);
 }
 
