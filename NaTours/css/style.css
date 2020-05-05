@@ -41,18 +41,18 @@ body {
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* clip-path property in CSS allows you to specify a specific region of an element to display*/
 }
 
-.logo-box {
+.header__logo-box {
     position: absolute; 
     top: 4rem; /* top and left positions will be relative to its parent element which has position relative (header)*/
     left: 4rem;
 }
 
-.logo {
+.header__logo {
     height: 3.5rem;
 }
 
 
-.text-box{
+.header__text-box{
     position: absolute;
     top: 40%; /* top and left are in relation to parent element */
     left: 50%;
@@ -66,7 +66,7 @@ body {
     margin-bottom: 6rem;
 }
 
-.heading-primary-main {
+.heading-primary--main {
     display: block;
     font-size: 6rem;
     font-weight: 400;
@@ -78,7 +78,7 @@ body {
     animation-timing-function: ease-out;
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
     display: block;
     font-size: 2rem;
     font-weight: 700;
@@ -164,7 +164,7 @@ Defining animations
     box-shadow: 0 5px 10px rgba(0,0,0, 0.2);
 }
 
-.btn-white {
+.btn--white {
     background-color: #fff;
     color: #777;
 }
@@ -192,7 +192,7 @@ Defining animations
     opacity: 0;
 }
 
-.btn-animated {
+.btn--animated {
     animation: moveInBottom 1s ease-out .75s;
     animation-fill-mode: backwards; /*applies (backwards) (first keyframeg)0%  of the defined animation before the animation starts*/
 }
