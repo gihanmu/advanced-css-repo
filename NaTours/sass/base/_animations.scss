@@ -1,0 +1,58 @@
+
+/**
+Defining animations 
+**/
+
+/* going from left to right */
+@keyframes moveInLeft {
+    0% {
+        /* start of the animation */
+        opacity: 0; /*element is initially invisible */
+        transform: translate(-10rem);
+    }
+
+    80% {
+        transform: translate(2rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/* going from right to left */
+@keyframes moveInRight {
+    0% {
+        /* start of the animation */
+        opacity: 0; /*element is initially invisible */
+        transform: translate(10rem);
+    }
+
+    80% {
+        transform: translate(-2rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/* going from right to left */
+@keyframes moveInBottom {
+    0% {
+        /* start of the animation */
+        opacity: 0; /*element is initially invisible */
+        transform: translateY(10rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/**
+Defining animations 
+**/

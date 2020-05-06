@@ -1,198 +1,154 @@
-/*
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
-*/
-
 *, *::after, *::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* box sizing will make sure element size include borders and padding*/
-}
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* box sizing will make sure element size include borders and padding*/ }
 
 html {
-    /* Setting root font-size and use rem values in other elements*/
-    /*we dont specify root font-size in PX. Usually browser default font-size is 16px. Make a percentage of that*/
-    font-size: 62.5%; /*we want font-size to be 10px. So 62.5% of default font-size (16px)*/
-}
+  /* Setting root font-size and use rem values in other elements*/
+  /*we dont specify root font-size in PX. Usually browser default font-size is 16px. Make a percentage of that*/
+  font-size: 62.5%;
+  /*we want font-size to be 10px. So 62.5% of default font-size (16px)*/ }
 
+/**
+Defining animations 
+**/
+/* going from left to right */
+@keyframes moveInLeft {
+  0% {
+    /* start of the animation */
+    opacity: 0;
+    /*element is initially invisible */
+    transform: translate(-10rem); }
+  80% {
+    transform: translate(2rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+/* going from right to left */
+@keyframes moveInRight {
+  0% {
+    /* start of the animation */
+    opacity: 0;
+    /*element is initially invisible */
+    transform: translate(10rem); }
+  80% {
+    transform: translate(-2rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+/* going from right to left */
+@keyframes moveInBottom {
+  0% {
+    /* start of the animation */
+    opacity: 0;
+    /*element is initially invisible */
+    transform: translateY(10rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+/**
+Defining animations 
+**/
 body {
-    font-family: 'Lato' , sans-serif;
-    font-weight: 400;
-    color: #777;
-    line-height: 1.7;
-    padding: 3rem; /* paddings are not inherited */
-}
+  font-family: 'Lato' , sans-serif;
+  font-weight: 400;
+  color: #777;
+  line-height: 1.7;
+  padding: 3rem;
+  /* paddings are not inherited */ }
 
-.header{
-    position: relative;
-    height: 95vh;
-    background-image: linear-gradient(
-        to right bottom,
-       rgba(126,213,111, 0.8),
-        rgba(40, 180, 131, 0.8)
-    ), 
-    url(../img/hero.jpg); /*   background-image with linear-gradient;*/
-    background-size: cover; /* property specifies the size of the background images*/
-    background-position: top;
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /* clip-path property in CSS allows you to specify a specific region of an element to display*/
-}
-
-.header__logo-box {
-    position: absolute; 
-    top: 4rem; /* top and left positions will be relative to its parent element which has position relative (header)*/
-    left: 4rem;
-}
-
-.header__logo {
-    height: 3.5rem;
-}
-
-
-.header__text-box{
-    position: absolute;
-    top: 40%; /* top and left are in relation to parent element */
-    left: 50%;
-    transform: translate(-50%, -50%); /*This will shifted height and width of element (This is not related to parent element, but the element itself)*/
-    text-align: center;
-}
-
-.heading-primary{
-    color: #fff;
-    text-transform: uppercase;
-    margin-bottom: 6rem;
-}
-
-.heading-primary--main {
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
     display: block;
     font-size: 6rem;
     font-weight: 400;
     letter-spacing: 3.5rem;
-
     /** specifying animations**/
     animation-name: moveInLeft;
     animation-duration: 1s;
-    animation-timing-function: ease-out;
-}
-
-.heading-primary--sub {
+    animation-timing-function: ease-out; }
+  .heading-primary--sub {
     display: block;
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: 1.75rem;
-    animation: moveInRight 1s ease-out;
-}
+    animation: moveInRight 1s ease-out; }
 
-/**
-Defining animations 
-**/
-
-/* going from left to right */
-@keyframes moveInLeft {
-    0% {
-        /* start of the animation */
-        opacity: 0; /*element is initially invisible */
-        transform: translate(-10rem);
-    }
-
-    80% {
-        transform: translate(2rem);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
-}
-
-/* going from right to left */
-@keyframes moveInRight {
-    0% {
-        /* start of the animation */
-        opacity: 0; /*element is initially invisible */
-        transform: translate(10rem);
-    }
-
-    80% {
-        transform: translate(-2rem);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
-}
-
-/* going from right to left */
-@keyframes moveInBottom {
-    0% {
-        /* start of the animation */
-        opacity: 0; /*element is initially invisible */
-        transform: translateY(10rem);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
-}
-
-/**
-Defining animations 
-**/
-
-.btn:link, btn:visited {
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 1.5rem 4rem;
-    display: inline-block;
-    border-radius: 10rem;
-    transition: all .2s ;
-    position: relative;
-}
+.btn:link, .btn:visited {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1.5rem 4rem;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all .2s;
+  position: relative; }
 
 .btn:hover {
-    transform: translateY(-.3rem);
-    box-shadow: 0 10px 20px rgba(0,0,0, 0.2);
-}
+  transform: translateY(-0.3rem);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    /*increase the size of the element*/
+    opacity: 0; }
 
 .btn:active {
-    transform: translateY(-.1rem);
-    box-shadow: 0 5px 10px rgba(0,0,0, 0.2);
-}
+  transform: translateY(-0.1rem);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); }
 
 .btn--white {
-    background-color: #fff;
-    color: #777;
-}
-
+  background-color: #fff;
+  color: #777; }
+  .btn--white::after {
+    background-color: #fff; }
 
 .btn::after {
-    content: ''; /*content and display MUST be there for after to work*/
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    position: absolute; /* absolute is relative to parent element ok*/
-    border-radius: 100px;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    transition: all .4s;
-}
-
-.btn-white::after {
-    background-color: #fff;
-}
-
-.btn:hover::after {
-    transform: scaleX(1.4) scaleY(1.6); /*increase the size of the element*/
-    opacity: 0;
-}
+  content: '';
+  /*content and display MUST be there for after to work*/
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  /* absolute is relative to parent element ok*/
+  border-radius: 100px;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  transition: all .4s; }
 
 .btn--animated {
-    animation: moveInBottom 1s ease-out .75s;
-    animation-fill-mode: backwards; /*applies (backwards) (first keyframeg)0%  of the defined animation before the animation starts*/
-}
+  animation: moveInBottom 1s ease-out .75s;
+  animation-fill-mode: backwards;
+  /*applies (backwards) (first keyframeg)0%  of the defined animation before the animation starts*/ }
+
+.header {
+  position: relative;
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  /*   background-image with linear-gradient;*/
+  background-size: cover;
+  /* property specifies the size of the background images*/
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /* clip-path property in CSS allows you to specify a specific region of an element to display*/ }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    /* top and left positions will be relative to its parent element which has position relative (header)*/
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    /* top and left are in relation to parent element */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*This will shifted height and width of element (This is not related to parent element, but the element itself)*/
+    text-align: center; }

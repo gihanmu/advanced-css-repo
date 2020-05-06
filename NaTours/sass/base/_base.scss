@@ -1,0 +1,14 @@
+@import "../abstracts/variables";
+
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* box sizing will make sure element size include borders and padding*/
+}
+
+html {
+    /* Setting root font-size and use rem values in other elements*/
+    /*we dont specify root font-size in PX. Usually browser default font-size is 16px. Make a percentage of that*/
+    font-size: 62.5%; /*we want font-size to be 10px. So 62.5% of default font-size (16px)*/
+}
+

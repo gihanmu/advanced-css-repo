@@ -4,12 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile:scss": "node-sass sass/main.scss css/style.css -w",
+    "start" : "live-server --port=7788"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "node-sass": "^4.14.1"
+  },
+  "dependencies": {
+    "live-server": "^1.2.1"
   }
 }
