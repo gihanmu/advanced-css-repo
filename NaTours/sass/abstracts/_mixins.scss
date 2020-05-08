@@ -1,0 +1,7 @@
+@mixin clearfix {
+    &::after { // this will apply as an after pseudo element
+        content: "";
+        display: table; //standard version of cleafix
+        clear: both;
+    }
+}

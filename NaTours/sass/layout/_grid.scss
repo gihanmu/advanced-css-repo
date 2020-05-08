@@ -1,0 +1,24 @@
+.row {
+    max-width: $grid-width; // usual practice is to have 1140px. Since our root font size is 10px, we make it 114rem
+    background: #eee;
+    margin: 0 auto;
+   
+
+    &:not(:last-child) {
+        margin-bottom: $gutter-vertical;
+    }
+
+    @include clearfix;
+
+    .col-1-of-2 {
+        width: calc((100% - #{$gutter-horizontal}) / 2);
+        background-color: orangered;
+    
+        &:not(:last-child){
+            margin-left: $gutter-horizontal;
+        }
+    }
+
+    
+}
+
