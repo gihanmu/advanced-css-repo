@@ -7,6 +7,7 @@
         position: absolute;
         z-index: 10;
         transition: all .2s;
+        outline-offset: 2rem; 
         &--p1 {
             left: 0;
             top: -2rem;
@@ -23,10 +24,15 @@
         }
 
         &:hover {
+            outline: 1.5rem solid $color-primary; //outline will behave same as border, but we can define an outline offset which will add some space between the content and outline. We cant do it with border
             transform: scale(1.2);
             z-index: 20;
             box-shadow: 0 2.5rem 4rem rgba($color-dark, .5);
         }
 
+    }
+
+    &:hover &__photo:not(:hover) {
+        transform: scale(0.8);
     }
 }
